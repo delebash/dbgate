@@ -1,6 +1,6 @@
 {
   "name": "dbgate",
-  "version": "6.0.0-alpha.1",
+  "version": "6.6.1-premium-beta.15",
   "private": true,
   "author": "Jan Prochazka <jenasoft.database@gmail.com>",
   "description": "Opensource database administration tool",
@@ -9,7 +9,23 @@
     "electron-updater": "^6.3.4",
     "jsonwebtoken": "^9.0.2",
     "lodash.clonedeepwith": "^4.5.0",
-    "patch-package": "^6.4.7"
+    "patch-package": "^6.4.7",
+    "@clickhouse/client": "^1.5.0",
+    "wkx": "^0.5.0",
+    "pg-copy-streams": "^6.0.6",
+    "pg": "^8.11.5",
+    "bson": "^6.8.0",
+    "mongodb": "^6.3.0",
+    "@mongosh/browser-runtime-electron": "^3.16.4",
+    "@mongosh/service-provider-node-driver": "^3.10.2",
+    "tedious": "^18.6.1",
+    "mysql2": "^3.11.3",
+    "ioredis": "^5.4.1",
+    "node-redis-dump2": "^0.5.0",
+    "@aws-sdk/rds-signer": "^3.665.0",
+    "activedirectory2": "^2.1.0",
+    "axios": "^0.21.1",
+    "ssh2": "^1.16.0"
   },
   "repository": {
     "type": "git",
@@ -20,80 +36,12 @@
     "appId": "org.dbgate",
     "productName": "DbGate",
     "asarUnpack": "**/*.node",
-    "mac": {
-      "category": "database",
-      "icon": "icon512-mac.png",
-      "hardenedRuntime": true,
-      "entitlements": "entitlements.mac.plist",
-      "entitlementsInherit": "entitlements.mac.plist",
-      "publish": [
-        {
-          "provider": "github",
-          "owner": "dbgate",
-          "repo": "dbgate"
-        }
-      ],
-      "target": {
-        "target": "default",
-        "arch": [
-          "universal",
-          "x64",
-          "arm64"
-        ]
-      },
-      "notarize": true
-    },
-    "linux": {
-      "target": [
-        "deb",
-        "snap",
-        {
-          "target": "AppImage",
-          "arch": [
-            "x64",
-            "arm64"
-          ]
-        },
-        "tar.gz"
-      ],
-      "icon": "icons/",
-      "category": "Development",
-      "synopsis": "Database manager for SQL Server, MySQL, PostgreSQL, MongoDB and SQLite",
-      "publish": [
-        {
-          "provider": "github",
-          "owner": "dbgate",
-          "repo": "dbgate"
-        }
-      ]
-    },
-    "appImage": {
-      "license": "./LICENSE",
-      "category": "Development"
-    },
-    "snap": {
-      "publish": [
-        "github",
-        "snapStore"
-      ],
-      "environment": {
-        "ELECTRON_SNAP": "true"
-      }
-    },
     "win": {
       "target": [
         {
           "target": "nsis",
           "arch": [
-            "x64",
-            "arm64"
-          ]
-        },
-        {
-          "target": "zip",
-          "arch": [
-            "x64",
-            "arm64"
+            "x64"
           ]
         }
       ],
@@ -128,7 +76,15 @@
   "devDependencies": {
     "copyfiles": "^2.2.0",
     "cross-env": "^6.0.3",
-    "electron": "30.0.2",
-    "electron-builder": "25.1.8"
+    "electron": "37.2.6",
+    "electron-builder": "26.0.12"
+  },
+  "optionalDependencies": {
+    "@duckdb/node-api": "^1.2.1-alpha.16",
+    "mongodb-client-encryption": "^6.1.1",
+    "msnodesqlv8": "^5.1.1",
+    "oracledb": "^6.6.0",
+    "libsql": "0.5.0-pre.6",
+    "better-sqlite3": "11.8.1"
   }
 }

@@ -1,5 +1,5 @@
 
 module.exports = { 
-  version: '6.0.0-alpha.1',
-  buildTime: '2024-12-01T00:00:00Z'
+  version: '6.6.1-premium-beta.15',
+  buildTime: '2025-08-09T07:01:40.208Z'
 };
